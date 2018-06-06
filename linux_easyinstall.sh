@@ -63,7 +63,7 @@ else
 	echo "correct the problem and restart the script"
         exit 1
 fi
-}
+
 # Add swap if needed
 read -p "Do you want to add memory swap file to your system (Y/n) ?" -s ADD_SWAP
 if [[ ("$ADD_SWAP" == "y" || "$ADD_SWAP" == "Y" || "$ADD_SWAP" == "") ]]; then
