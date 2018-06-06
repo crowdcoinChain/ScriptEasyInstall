@@ -115,6 +115,7 @@ virtualenv ./venv
 #change line of sentinelconf with correct path
 sed -i -e 's/dash_conf=\/home\/YOURUSERNAME\/\.crowdcoincore\/crowdcoin\.conf/dash_conf=~\/\.crowdcoincore\/crowdcoin.conf/g' sentinel.conf
 
+cd ~
 sudo apt-get install libzmq4-dev libminiupnpc-dev libssl-dev libevent-dev -y
 sudo apt-get install build-essential libtool autotools-dev automake pkg-config -y
 sudo apt-get install libssl-dev libevent-dev bsdmainutils software-properties-common -y
@@ -125,10 +126,8 @@ sudo apt-get install libdb4.8-dev libdb4.8++-dev wget -y
 wget $GITHUB_DL
 tar -zxf Crowdcoin_command_line_binaries_linux_1.0.tar.gz
 
-clear
-cd ~
 echo $PWD
-#cd ..
+
 mkdir .crowdcoincore
 cd .crowdcoincore
 rpcuser=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
