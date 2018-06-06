@@ -116,7 +116,7 @@ virtualenv ./venv
 sed -i -e 's/dash_conf=\/home\/YOURUSERNAME\/\.crowdcoincore\/crowdcoin\.conf/dash_conf=~\/\.crowdcoincore\/crowdcoin.conf/g' sentinel.conf
 
 cd ~
-sudo apt-get install libzmq4-dev libminiupnpc-dev libssl-dev libevent-dev -y
+sudo apt-get install pwgen libzmq4-dev libminiupnpc-dev libssl-dev libevent-dev -y
 sudo apt-get install build-essential libtool autotools-dev automake pkg-config -y
 sudo apt-get install libssl-dev libevent-dev bsdmainutils software-properties-common -y
 sudo apt-get install libboost-all-dev -y
