@@ -124,7 +124,7 @@ sudo add-apt-repository ppa:bitcoin/bitcoin -y
 sudo apt-get update 
 sudo apt-get install libdb4.8-dev libdb4.8++-dev wget -y
 wget $GITHUB_DL
-tar -zxf Crowdcoin_command_line_binaries_linux_1.0.tar.gz
+tar -zxf Crowdcoin_command_line_binaries_linux_1.1.tar.gz
 
 echo $PWD
 
