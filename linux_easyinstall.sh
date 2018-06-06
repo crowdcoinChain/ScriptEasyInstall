@@ -8,7 +8,8 @@ ADD_SWAP=N
 GITHUB_DL=https://github.com/crowdcoinChain/Crowdcoin/releases/download/1.1.0/Crowdcoin_command_line_binaries_linux_1.1.tar.gz
 RPCUSER=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
 RPCPASS=`pwgen -1 20 -n`
-RPCPORT=12875
+RPCPORT=19470
+CRCPORT=12875
 
 DAEMON=crowdcoind
 CLI=crowdcoin-cli
@@ -98,7 +99,7 @@ sudo ufw default deny incoming
 sudo ufw default allow outgoing
 sudo ufw allow ssh
 sudo ufw limit ssh/tcp
-sudo ufw allow $RPCPORT/tcp
+sudo ufw allow $CRCPORT/tcp
 sudo ufw logging on
 echo "y" | sudo ufw enable
 echo && echo "Firewall installed and enabled!"
