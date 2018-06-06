@@ -65,7 +65,7 @@ else
 fi
 
 # Add swap if needed
-read -p "Do you want to add memory swap file to your system (Y/n) ?" -s ADD_SWAP
+read -p "Do you want to add memory swap file to your system (Y/n) ?" -n 1 -r -s ADD_SWAP
 if [[ ("$ADD_SWAP" == "y" || "$ADD_SWAP" == "Y" || "$ADD_SWAP" == "") ]]; then
 	if [ ! -f /swapfile ]; then
 	    echo && echo "Adding swap space..."
