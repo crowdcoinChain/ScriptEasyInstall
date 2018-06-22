@@ -1,35 +1,9 @@
-# ScriptEasyInstall 1.0
-
-This nice script do the full install of a Crowdcoin masternode
-adding as well the resync script and the sentinel
-
-## INSTALL HOW WALLET
-
-Log in your vps and then run the following commands
-
-```
-sudo apt-get install git
-git clone https://github.com/crowdcoinChain/ScriptEasyInstall
-cd ScriptEasyInstall
-bash linux_easyinstall.sh
-```
-
-or One line
-
-```
-sudo apt-get install git -y;git clone https://github.com/crowdcoinChain/ScriptEasyInstall;cd ScriptEasyInstall;bash linux_easyinstall.sh
-
-```
-
-
-## INSTALL COLD WALLET
-
 # Crowdcoin Masternode Setup Guide (Ubuntu 16.04)
 ![Example-Logo](https://crowdcoin.site/img/logo-dark.png)
 
 This guide will assist you in setting up a Crowdcoin Masternode on a Linux Server running Ubuntu 16.04.
 
-This tutorial will guide you through the steps necessary to setup a Crowdcoin Masternode on a VPS server that is controlled via your remote wallet. This is the most secure way of configuring a masternode as the 1,000 CRC collateral resides in your local wallet and not within the remote masternode.
+This tutorial will guide you through the steps necessary to setup a Crowdcoin Masternode on a VPS server that is controlled from your remote wallet. This is the most secure way of configuring a masternode as the 1,000 CRC collateral resides in your local wallet and not within the remote masternode.
 
 Your local wallet is not required to be kept open and you can store it as a cold wallet whilst still collecting masternode payments. Whilst there are other ways to setup masternodes, this is by far the most secure and is highly recommended.
 
@@ -53,17 +27,35 @@ Your local wallet is not required to be kept open and you can store it as a cold
 ### Part A: Preparing the Local wallet
 
 ***Step 1:*** 
-> Download the Crowdcoin wallet from our [Official website](https://crowdcoin.site) or [Github](https://github.com/crowdcoinChain/Crowdcoin/releases)
+> Download the Crowdcoin wallet from our [official website](https://crowdcoin.site) or [Github](https://github.com/crowdcoinChain/Crowdcoin/releases)
 
 ***Step 2:*** 
 > Start the Crowdcoin wallet !
 
 ![wallet](https://i.imgur.com/iYDRSpZ.jpg)
 
+* If you are prompted to allow access by the firewall, do so.
+* If the wallet is not synching, add the nodes in the configuration file.
+
+Open the configuration from `Tools > Open Wallet Configuration File`. Restart the wallet every time you update the configuration file.
+
+```
+addnode=84.17.23.43:12875   
+addnode=18.220.138.90:12875   
+addnode=86.57.164.166:12875   
+addnode=86.57.164.146:12875   
+addnode=18.217.78.145:12875   
+addnode=23.92.30.230:12875   
+addnode=35.190.182.68:12875   
+addnode=80.209.236.4:12875   
+addnode=91.201.40.89:12875
+```
+
 ***Step 3:***
 > Create masternode public address
 
-Depending on the number of masternodes you will be running, you will want to create a unique receiving address for each. A receiving address can be created in the wallet by selecting `File - Receiving addresses` in the menu the wallet. Select `New` and click on ***OK*** to create a new receiving address. Create a new address for each masternode that you intend to run.
+Depending on the number of masternodes you will be running, you will want to create a unique receiving address for each. A receiving address can be created in the wallet by selecting `File - Receiving addresses` in the menu the wallet.    
+Click `New`, type in a label and click on ***OK*** to create a new receiving address. Create a new address for each masternode that you intend to run.
 
 ![gen-address1](https://i.imgur.com/Dag9qTV.jpg)
 
@@ -160,12 +152,16 @@ The transaction and output ID from the deposit you made into your masternode pub
 ***Step 7***
 > Paste the code below into Putty to ***download*** the masternode install script.
 
-`wget -q https://raw.githubusercontent.com/ronaldr1987/crowdcoin/master/crowdcoin_install.sh`
+```
+wget -q https://raw.githubusercontent.com/ronaldr1987/crowdcoin/master/crowdcoin_install.sh
+```
 
 ***Step 8***
 > Paste the code below into Putty, then press ***enter*** to start the masternode installation.
 
-`bash crowdcoin_install.sh`
+```
+bash crowdcoin_install.sh
+```
 
 ***Step 9***
 > Wait for the installation to ***finish*** (this will take approximately 10-20 minutes)
@@ -174,8 +170,8 @@ The transaction and output ID from the deposit you made into your masternode pub
 > When prompted enter your ***masternode genkey*** and press ***enter***. (you can copy/paste this information from your local wallet)
 
 ***Step 11***
-> You will now see all of the relavant information for your server.
-> Keep this terminal open as we will need the info for the local wallet setup.
+* You will now see all of the relavant information for your server.
+* Keep this terminal open as we will need the info for the local wallet setup.
 
 ![mn-finished](https://i.imgur.com/PqN0Z2o.jpg)
 
@@ -188,6 +184,8 @@ The transaction and output ID from the deposit you made into your masternode pub
 
 ***Step 2***
 
+The file will contain an example that is commented out (with a # in front).
+
 > Create a new rule for your masternode:
  
 * `ALIAS` : Any name can be given 
@@ -196,8 +194,8 @@ The transaction and output ID from the deposit you made into your masternode pub
  in the debug console.
 * `TX`    : The long alphanumerical string when typing masternode outputs
  in the debug console.
-* `ID`    : The small number (0/1) when typing masternode outputs in the debug
-console. 
+* `ID`    : Is your outputidx when typing masternode outputs
+ in the debug console.
 
 Click ***File - Save***
 
@@ -213,7 +211,9 @@ Go to the ***Masternodes*** tab and inside that to the ***My Masternodes*** tab,
 ***Step 4***
 > Check the status of your masternode within the VPS by using the command below:
 
-`crowdcoin-cli masternode status`
+```
+crowdcoin-cli masternode status
+```
 
 You should now see ***Masternode successfully started*** 
 
@@ -225,8 +225,9 @@ You should now see ***Masternode successfully started***
 
 > ***Q1: I’ve installed the Crowdcoin wallet, but where are my wallet data files?***
 
-The default directory where your wallet data files will be stored is    
-`C:\Users\YOUR_USERNAME\AppData\Roaming\Crowdcoincore`
+These are the default directories for the data directory:
+* Mac: ~/Library/Application Support/Crowdcoincore
+* Windows: C:\Users\YOUR_USERNAME\AppData\Roaming\Crowdcoincore  
 
 > ***Q2: I have 1001 CRC, why is my masternode outputs blank?***
 
@@ -252,15 +253,17 @@ Note that even a dedicated server can go down from time to time. When this happe
 
 > ***Q7: My masternode is stuck on block 'xxx', how can i perform a reindex?***
 
-`systemctl stop crowdcoin.service`
-
-`crowdcoind -daemon -reindex`
-
-`crowdcoin-cli getinfo` (make sure blocks are increasing)
+```
+systemctl stop crowdcoin.service
+crowdcoind -daemon -reindex
+crowdcoin-cli getinfo
+```
 
 Check the sync status with:
 
-`crowdcoin-cli mnsync status`
+```
+crowdcoin-cli mnsync status
+```
 
 You should now see ***MASTERNODE_SYNC_FINISHED***
 
