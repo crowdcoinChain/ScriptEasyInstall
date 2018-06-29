@@ -1,6 +1,8 @@
 # Crowdcoin Masternode Setup Guide (Ubuntu 16.04)
 ![Example-Logo](https://crowdcoin.site/img/logo-dark.png)
 
+Creator: https://github.com/ronaldr1987
+
 This guide will assist you in setting up a Crowdcoin Masternode on a Linux Server running Ubuntu 16.04.
 
 This tutorial will guide you through the steps necessary to setup a Crowdcoin Masternode on a VPS server that is controlled from your remote wallet. This is the most secure way of configuring a masternode as the 1,000 CRC collateral resides in your local wallet and not within the remote masternode.
@@ -218,6 +220,15 @@ crowdcoin-cli masternode status
 You should now see ***Masternode successfully started*** 
 
 ![mn-started](https://i.imgur.com/mm3MM9q.jpg)
+
+***INSTALLATION FINISHED***
+
+```
+DONATION (CRC): CV8WdSZKp4rcTUxMLoPg8WcS1PdqEjgREV
+```
+```
+DONATION (ETH): 0x06E4454CB946038E3252eD1d5B3fDafb85E089F5
+```
 
 ***
 
