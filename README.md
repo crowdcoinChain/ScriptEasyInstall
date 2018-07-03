@@ -35,21 +35,11 @@ Your local wallet is not required to be kept open and you can store it as a cold
 ![wallet](https://i.imgur.com/iYDRSpZ.jpg)
 
 * If you are prompted to allow access by the firewall, do so.
-* If the wallet is not synching, add the nodes in the configuration file.
+* If your wallet is not ***synchronising***, add the nodes from [nodes.crowdcoin.site](https://nodes.crowdcoin.site) in to the configuration file.
 
-Open the configuration from `Tools > Open Wallet Configuration File`. Restart the wallet every time you update the configuration file.
-
-```
-addnode=84.17.23.43:12875   
-addnode=18.220.138.90:12875   
-addnode=86.57.164.166:12875   
-addnode=86.57.164.146:12875   
-addnode=18.217.78.145:12875   
-addnode=23.92.30.230:12875   
-addnode=35.190.182.68:12875   
-addnode=80.209.236.4:12875   
-addnode=91.201.40.89:12875
-```
+Open the configuration from `Tools > Open Wallet Configuration File`, add the nodes from [nodes.crowdcoin.site](https://nodes.crowdcoin.site) and save the file.
+ 
+Restart the wallet every time you update the configuration file.
 
 ***Step 3:***
 > Create masternode public address
@@ -219,6 +209,17 @@ You should now see ***Masternode successfully started***
 
 ![mn-started](https://i.imgur.com/mm3MM9q.jpg)
 
+**INSTALLATION FINSIHED !!!**
+
+```
+DONATION (CRC): CV8WdSZKp4rcTUxMLoPg8WcS1PdqEjgREV
+```
+```
+DONATION (ETH): 0x06E4454CB946038E3252eD1d5B3fDafb85E089F5
+```
+
+For any questions related to this guide you can contact support on our [Discord](https://discord.gg/KS7PUpe) channel.
+
 ***
 
 ### Part E: Frequently Asked Questions
@@ -270,3 +271,7 @@ You should now see ***MASTERNODE_SYNC_FINISHED***
 > ***Q8: How many coins will i receive per day/week/month ?***
 
 You can check all the current stats at https://masternodes.online/
+
+***
+
+**Creator:** https://github.com/ronaldr1987/
