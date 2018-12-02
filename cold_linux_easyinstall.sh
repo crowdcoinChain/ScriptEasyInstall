@@ -169,6 +169,7 @@ externalip=$NODEIP:$COIN_PORT
 masternodeprivkey=$COINKEY
 
 #ADDNODES
+addnode=54.36.163.216:8585
 addnode=96.126.124.245
 addnode=121.200.4.203
 addnode=188.165.52.69
