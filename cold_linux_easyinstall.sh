@@ -4,12 +4,12 @@ TMP_FOLDER=$(mktemp -d)
 CONFIG_FILE='crowdcoin.conf'
 CONFIGFOLDER='/root/.crowdcoinbrain'
 COIN_DAEMON='crowdcoind'
-COIN_VERSION='v2.0.0'
+COIN_VERSION='v2.0.1'
 COIN_CLI='crowdcoin-cli'
 COIN_PATH='/usr/local/bin/'
 COIN_REPO='https://github.com/crowdcoinChain/Crowdcoin.git'
-COIN_TGZ='https://github.com/crowdcoinChain/Crowdcoin/releases/download/2.0.0/Crowdcoin_command_line_binaries_linux_2.0.0.tar.gz'
-COIN_BINDIR='Crowdcoin_command_line_binaries_linux_2.0.0'
+COIN_TGZ='https://github.com/crowdcoinChain/Crowdcoin/releases/download/2.0.1/Crowdcoin_command_line_binaries_linux_2.0.1.tar.gz'
+COIN_BINDIR='Crowdcoin_command_line_binaries_linux_2.0.1'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
 SENTINEL_REPO='https://github.com/crowdcoinChain/sentinelLinux.git'
 #COIN_BOOTSTRAP='XX'
@@ -169,6 +169,7 @@ externalip=$NODEIP:$COIN_PORT
 masternodeprivkey=$COINKEY
 
 #ADDNODES
+addnode=54.36.163.216:8585
 addnode=96.126.124.245
 addnode=121.200.4.203
 addnode=188.165.52.69
