@@ -19,7 +19,7 @@
 # so and that the binary are install in default location used by this script
 # if not, you will have to modify the BIN_DIR Variable
 
-BIN_DIR=~/Crowdcoin_command_line_binaries_linux_2.0.0
+BIN_DIR=~/Crowdcoin_command_line_binaries_linux_2.0.1
 CRC_CLI=crowdcoin-cli
 
 TIMESTAMP=`date "+%Y-%m-%d %H:%M:%S"`
