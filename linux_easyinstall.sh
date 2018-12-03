@@ -43,7 +43,7 @@ fi
 
 
 ADD_SWAP=N
-GITHUB_DL=https://github.com/crowdcoinChain/Crowdcoin/releases/download/2.0.0/Crowdcoin_command_line_binaries_linux_2.0.0.tar.gz
+GITHUB_DL=https://github.com/crowdcoinChain/Crowdcoin/releases/download/2.0.1/Crowdcoin_command_line_binaries_linux_2.0.1.tar.gz
 RPCPORT=11998
 CRCPORT=8585
 
@@ -160,7 +160,7 @@ sudo apt-get update
 sudo apt-get install libdb4.8-dev libdb4.8++-dev wget -y
 
 wget $GITHUB_DL
-tar -zxvf ./Crowdcoin_command_line_binaries_linux_2.0.0.tar.gz
+tar -zxvf ./Crowdcoin_command_line_binaries_linux_2.0.1.tar.gz
 
 echo ""
 echo "==============================================="
@@ -169,7 +169,7 @@ echo "==============================================="
 echo "" 
 if pgrep -x "crowdcoind" > /dev/null
 then
-    cd ~/Crowdcoin_command_line_binaries_linux_2.0.0
+    cd ~/Crowdcoin_command_line_binaries_linux_2.0.1
     echo "Found crowdcoind is running, stopping it..."
     ./crowdcoin-cli stop
     echo "Waiting 60 seconds before continuing..." 
@@ -187,7 +187,7 @@ rpcpass=`pwgen -1 20 -n`
 echo "rpcuser=${rpcuser}
 rpcpassword=${rpcpass}" >> crowdcoin.conf
 
-cd ~/Crowdcoin_command_line_binaries_linux_2.0.0
+cd ~/Crowdcoin_command_line_binaries_linux_2.0.1
 echo "Starting Crowdcoind from $PWD"
 ./crowdcoind -daemon
 sleep 60
