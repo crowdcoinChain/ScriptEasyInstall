@@ -169,6 +169,7 @@ externalip=$NODEIP:$COIN_PORT
 masternodeprivkey=$COINKEY
 
 #ADDNODES
+addnode=54.36.163.216:8585
 addnode=96.126.124.245
 addnode=121.200.4.203
 addnode=188.165.52.69
@@ -231,7 +232,7 @@ fi
 
 
 function checks() {
-if [[ $(lsb_release -d) != *16.04* ]]; then
+if [[ $(lsb_release -d) != *18.04* ]]; then
   echo -e "${RED}You are not running Ubuntu 16.04. Installation is cancelled.${NC}"
   exit 1
 fi
