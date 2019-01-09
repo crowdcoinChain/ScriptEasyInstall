@@ -60,7 +60,7 @@ function install_sentinel() {
 function download_node() {
   echo -e "${GREEN}Downloading and installing $COIN_NAME daemon${NC}"
   cd $TMP_FOLDER >/dev/null 2>&1
-  git clone COIN_REPO
+  git clone $COIN_REPO
   cd Crowdcoin
   ./autogen.sh
   ./configure.sh --without-gui --with-boost-libdir=/usr/local/lib
